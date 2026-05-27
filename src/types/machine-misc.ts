@@ -59,10 +59,18 @@ export interface MachineAlert {
   JSONData: string | null;
 }
 
-/** Operating hours entry referenced from `MachinePayment.PaymentMethodWorkingDays`. */
+/**
+ * Operating hours entry referenced from `MachinePayment.PaymentMethodWorkingDays`
+ * and `ActorPaymentResponse.PaymentMethodWorkingDays`.
+ */
 export interface WorkDay {
-  /** Pass-through — not documented in the machines section. */
-  [k: string]: unknown;
+  name: string | null;
+  /** 1=Monday … 7=Sunday. */
+  week_day: number | null;
+  /** Date-span format from the API. */
+  start_time: string | null;
+  end_time: string | null;
+  work_hour_lut_id: number | null;
 }
 
 /**

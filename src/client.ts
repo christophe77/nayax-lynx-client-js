@@ -9,6 +9,7 @@ import {
   type GetTransactionsByMachineOptions,
   type ResourcesBundle,
 } from "./helpers/index.js";
+import { ActorsResource } from "./resources/actors.js";
 import { CardsResource } from "./resources/cards.js";
 import { DevicesResource } from "./resources/devices.js";
 import { EReceiptResource } from "./resources/ereceipt.js";
@@ -18,8 +19,11 @@ import { MachineInventoryResource } from "./resources/machine-inventory.js";
 import { MachineProductsResource } from "./resources/machine-products.js";
 import { MachinesResource } from "./resources/machines.js";
 import { MetadataResource } from "./resources/metadata.js";
+import { PaymentResource } from "./resources/payment.js";
 import { ProductsResource } from "./resources/products.js";
 import { ProductGroupsResource } from "./resources/product-groups.js";
+import { ReportsResource } from "./resources/reports.js";
+import { SchedulingResource } from "./resources/scheduling.js";
 import { SignInResource } from "./resources/sign-in.js";
 import { TelemetryResource } from "./resources/telemetry.js";
 import { TransactionsResource } from "./resources/transactions.js";
@@ -49,6 +53,8 @@ export class NayaxLynxClient {
   readonly tokens: TokenManager;
   readonly resources: ResourcesBundle;
 
+  /** `Actors` resource (documented — 20 endpoints, v1+v2). */
+  readonly actors: ActorsResource;
   /** `Cards` resource (documented — 20 endpoints, v1+v2). */
   readonly cards: CardsResource;
   /** `Devices` resource (documented). */
@@ -63,10 +69,16 @@ export class NayaxLynxClient {
   readonly machineProducts: MachineProductsResource;
   /** `Metadata` resource (documented). */
   readonly metadata: MetadataResource;
+  /** `Payment` resource (documented — refund workflow). */
+  readonly payment: PaymentResource;
   /** `Products` resource (documented). */
   readonly products: ProductsResource;
   /** `Product Groups` resource (documented). */
   readonly productGroups: ProductGroupsResource;
+  /** `Reports` resource (documented — dashboard widgets). */
+  readonly reports: ReportsResource;
+  /** `Scheduling` resource (documented — 16 endpoints). */
+  readonly scheduling: SchedulingResource;
   /** `Sign In` resource (documented). */
   readonly signIn: SignInResource;
 
@@ -80,6 +92,7 @@ export class NayaxLynxClient {
       telemetry: new TelemetryResource(this.http),
       inventory: new InventoryResource(this.http),
     };
+    this.actors = new ActorsResource(this.http);
     this.cards = new CardsResource(this.http);
     this.devices = new DevicesResource(this.http);
     this.ereceipt = new EReceiptResource(this.http);
@@ -87,8 +100,11 @@ export class NayaxLynxClient {
     this.machineInventory = new MachineInventoryResource(this.http);
     this.machineProducts = new MachineProductsResource(this.http);
     this.metadata = new MetadataResource(this.http);
+    this.payment = new PaymentResource(this.http);
     this.products = new ProductsResource(this.http);
     this.productGroups = new ProductGroupsResource(this.http);
+    this.reports = new ReportsResource(this.http);
+    this.scheduling = new SchedulingResource(this.http);
     this.signIn = new SignInResource(this.http);
   }
 
