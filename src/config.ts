@@ -116,7 +116,7 @@ export function resolveConfig(cfg: NayaxLynxConfig): ResolvedConfig {
     auth: cfg.auth,
     retry: { ...DEFAULT_RETRY, ...(cfg.retry ?? {}) },
     timeoutMs: cfg.timeoutMs ?? 30_000,
-    userAgent: cfg.userAgent ?? "nayax-lynx-client-js/0.1.0",
+    userAgent: cfg.userAgent ?? "nayax-lynx-client-js/0.1.1",
     fetch: cfg.fetch ?? fetch,
     tokenRefreshLeewaySec: cfg.tokenRefreshLeewaySec ?? 30,
   };

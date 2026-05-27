@@ -1,6 +1,6 @@
 {
   "name": "nayax-lynx-client-js",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Fully-typed TypeScript client for the Nayax Operational Lynx API (135 endpoints across 16 resources) — auto token refresh, pagination, retry.",
   "repository": {
     "type": "git",
