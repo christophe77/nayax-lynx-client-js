@@ -1,4 +1,4 @@
-# nayax-lynx
+# nayax-lynx-client-js
 
 TypeScript client for the **Nayax Lynx** API.
 
@@ -23,13 +23,13 @@ TypeScript client for the **Nayax Lynx** API.
 ## Install
 
 ```bash
-npm install nayax-lynx
+npm install nayax-lynx-client-js
 ```
 
 ## Quickstart
 
 ```ts
-import { NayaxLynxClient } from "nayax-lynx";
+import { NayaxLynxClient } from "nayax-lynx-client-js";
 
 const lynx = new NayaxLynxClient({
   environment: "qa", // or "prod", or pass baseUrl directly
@@ -145,7 +145,7 @@ returns `Retry-After`, the delay is the **max** of the computed backoff and the 
 
 ```ts
 import express from "express";
-import { parseWebhook } from "nayax-lynx/webhooks";
+import { parseWebhook } from "nayax-lynx-client-js/webhooks";
 
 app.post(
   "/webhooks/nayax",

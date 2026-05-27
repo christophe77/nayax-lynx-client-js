@@ -1,7 +1,15 @@
 {
-  "name": "nayax-lynx",
+  "name": "nayax-lynx-client-js",
   "version": "0.1.0",
   "description": "TypeScript client for Nayax Lynx — auto token refresh, pagination, retry, webhook verification.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/christophe77/nayax-lynx-client-js.git"
+  },
+  "bugs": {
+    "url": "https://github.com/christophe77/nayax-lynx-client-js/issues"
+  },
+  "homepage": "https://github.com/christophe77/nayax-lynx-client-js#readme",
   "type": "module",
   "main": "./dist/index.js",
   "module": "./dist/index.js",
